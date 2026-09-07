@@ -1,0 +1,25 @@
+SSI risk grading app — Streamlit Community Cloud deployment
+
+Repository root must contain exactly:
+  app.py
+  ssi_scorer.py
+  grading_model.joblib
+  requirements.txt
+
+IMPORTANT: Python version
+The model-compatible dependency pins in requirements.txt should be deployed with Python 3.12.
+Do not deploy this artifact with Python 3.14.
+
+Streamlit Community Cloud steps
+1. Put the four files above in the same GitHub repository folder (preferably the root).
+2. If your existing app was deployed with Python 3.14, delete that Streamlit app and redeploy it.
+3. During deployment open Advanced settings.
+4. Select Python 3.12.
+5. Set Main file path to: app.py
+6. Deploy.
+
+Do not rename:
+  ssi_scorer.py
+  grading_model.joblib
+
+The application imports ssi_scorer by module name and expects grading_model.joblib beside app.py.
